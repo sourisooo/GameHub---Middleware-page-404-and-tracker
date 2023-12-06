@@ -9,8 +9,10 @@ const tracker = require('./middleware/tracker');
 // Je créer un router
 const router = Router();
 
+router.get('/', tracker, page404 ,homeController.homepage);
+
 // Tous ce que je faisais avec app, je peux le faire avec router
-router.get('/', tracker ,homeController.homepage);
+router.get('/:param', tracker, page404 ,homeController.homepage);
 
 // router.get('/game/fourchette', gameController.showFourchette);
 
